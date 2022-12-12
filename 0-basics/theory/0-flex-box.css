@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box; /* content-box is the default */
+}
+
+.flex-container {
+  display: fird;
+  background-color: burlywood;
+  /*flex-direction: row;
+  flex-wrap: wrap;*/
+  flex-flow: row nowrap;
+  /*justify-content: center;
+  align-items: stretch;
+  height: 400px;
+  /*align-items: center; 
+    align-content: center; 
+    */
+  padding: 20px;
+  border: 5px solid black;
+}
+
+.flex-container div {
+  background-color: grey;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border: 2px solid black;
+}
+
+#div1 {
+  background-color: white;
+}
+
+#div1 {
+  /*box-sizing: border-box;  */
+  background-color: red;
+  width: 200px;
+  float: left;
+  border: 2px solid black;
+  height: 100px;
+  padding: 20px;
+}
+
+#div2 {
+  background-color: blue;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  overflow: hidden;
+}

@@ -1,0 +1,14 @@
+body {
+  font-family: Roboto !important;
+}
+
+.cover-image {
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+}
+
+.custom-color {
+  color: rgb(123, 121, 210);
+  background-color: rosybrown;
+}

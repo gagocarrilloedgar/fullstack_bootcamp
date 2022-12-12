@@ -1,0 +1,33 @@
+{
+  "name": "fullstack_bootcamp",
+  "version": "1.0.0",
+  "description": "Fullstack Bootcamp from 4Geeks Academy. Theory and projects.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gagocarrilloedgar/fullstack_bootcamp.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "python",
+    "flask",
+    "sql",
+    "mysql",
+    "git",
+    "github",
+    "bootstrap",
+    "jest",
+    "npm"
+  ],
+  "author": "Edgar Gago Carrillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gagocarrilloedgar/fullstack_bootcamp/issues"
+  },
+  "homepage": "https://github.com/gagocarrilloedgar/fullstack_bootcamp#readme"
+}
