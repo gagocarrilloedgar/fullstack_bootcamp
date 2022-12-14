@@ -73,13 +73,33 @@ ls -R | wc -l
 
 ## Project
 
+```bash
 cd thecmdchallenge
-ls \*
-lr -r
+
+pwd
+
+ls -a
+
+lr -R
+
 clear
-cd dir/.../ && cat trophy.txt
-mkdir -p the-most-funny/not-that-funny  
-cp the-mostboring-text.txt ./lol.txt  
-mv funcode/kids.jpg funcode/images/hello/  
+
+cd _/ && cat trophy.txt
+
+cd funcode && find _.js
+
+mkdir -p the-most-funny/not-that-funny
+
+cp the-mostboring-text.txt ./lol.txt
+
+mv funcode/kids.jpg funcode/images/
+
 rm -rf small-name
+
 cat the-ultimate-joke.txt
+
+# We get the direction of the file
+find ./ -name file.txt
+```
+
+find ./ -name the-mostboring-text.txt -exec "{}"
