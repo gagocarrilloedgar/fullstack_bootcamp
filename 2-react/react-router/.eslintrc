@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "strict":0,
+    "no-unused-vars": 0,
+    "no-mixed-spaces-and-tabs": 0,
+    "no-debugger": 0,
+    "no-console": 1,
+    "semi": ["error", "always"],
+    "allowImportExportEverywhere": 0,
+    "comma-dangle": [1, { //when to use the last comma
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore",
+    }],
+    "react/prop-types": [2]
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}
