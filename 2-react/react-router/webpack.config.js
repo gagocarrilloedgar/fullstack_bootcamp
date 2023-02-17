@@ -1,21 +1,19 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 
-const port = 3000;
-let publicUrl = `ws://localhost:${port}/ws`;
-if(process.env.GITPOD_WORKSPACE_URL){
-  const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://');
-  publicUrl = `wss://${port}-${host}/ws`;
+const port = 3003
+let publicUrl = `ws://localhost:${port}/ws`
+if (process.env.GITPOD_WORKSPACE_URL) {
+  const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://')
+  publicUrl = `wss://${port}-${host}/ws`
 }
-console.log("publicUrl", publicUrl)
+console.log('publicUrl', publicUrl)
 
 module.exports = {
-  entry: [
-    './src/js/index.js'
-  ],
+  entry: ['./src/js/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
@@ -23,42 +21,50 @@ module.exports = {
   },
   module: {
     rules: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: ['babel-loader']
-        },
-        {
-          test: /\.(css)$/, use: [{
-              loader: "style-loader" // creates style nodes from JS strings
-          }, {
-              loader: "css-loader" // translates CSS into CommonJS
-          }]
-        }, //css only files
-        { 
-          test: /\.(png|svg|jpg|gif)$/, use: {
-            loader: 'file-loader',
-            options: { name: '[name].[ext]' } 
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.(css)$/,
+        use: [
+          {
+            loader: 'style-loader' // creates style nodes from JS strings
+          },
+          {
+            loader: 'css-loader' // translates CSS into CommonJS
           }
-        }, //for images
-        { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] } //for fonts
+        ]
+      }, //css only files
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: { name: '[name].[ext]' }
+        }
+      }, //for images
+      {
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+        use: ['file-loader']
+      } //for fonts
     ]
   },
   resolve: {
     extensions: ['*', '.js']
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   devServer: {
     port,
     hot: true,
-    allowedHosts: "all",
+    allowedHosts: 'all',
     historyApiFallback: true,
     static: {
-      directory: path.resolve(__dirname, "dist"),
+      directory: path.resolve(__dirname, 'dist')
     },
     client: {
       webSocketURL: publicUrl
-    },
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -66,8 +72,8 @@ module.exports = {
     //   files: path.resolve(__dirname, "src"),
     // }),
     new HtmlWebpackPlugin({
-        favicon: '4geeks.ico',
-        template: 'template.html'
-    }),
+      favicon: '4geeks.ico',
+      template: 'template.html'
+    })
   ]
-};
+}

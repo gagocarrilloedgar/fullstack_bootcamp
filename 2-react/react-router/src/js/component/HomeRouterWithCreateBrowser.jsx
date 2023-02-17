@@ -17,17 +17,7 @@ const Contacts = () => {
 const navigation = createBrowserRouter([
   {
     path: '/',
-    errorElement: <h1>Not the default error</h1>,
-    children: [
-      {
-        index: true,
-        element: <Home />
-      },
-      {
-        path: '/demo2',
-        element: <Link to='/contacts/2'>Go to contacts</Link>
-      }
-    ]
+    element: <Home />
   },
   {
     path: '/demo',
