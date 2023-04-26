@@ -8,6 +8,7 @@ and also the projects (to deliver and custom examples).
 - [4Geeks fullstack theory and projects](#4geeks-fullstack-theory-and-projects)
   - [Index](#index)
   - [Lessons \& Projects](#lessons--projects)
+  - [Final project](#final-project)
   - [Contributing](#contributing)
   - [Acknowledgements](#acknowledgements)
   - [Authors](#authors)
@@ -15,7 +16,9 @@ and also the projects (to deliver and custom examples).
 
 ## Lessons & Projects
 
-!Todo
+## Final project
+
+Guides: [Spanish guides](https://docs.google.com/document/d/1C1SfxyHfE7d7KkuSL8V3rztS5aGY4Gcu/edit)
 
 ## Contributing
 
