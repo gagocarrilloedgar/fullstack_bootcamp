@@ -52,6 +52,43 @@ example: [bootstrap](./1-bootstrap.html)
 - Columns are measured in percentages, so they are responsive to different screen sizes.
 - There are several classes you can use to specify the size of a column, including col, col-xs, col-sm, col-md, col-lg, and col-xl.
 
+## Utilities
+
+- Utilities are a set of classes in Bootstrap that allow you to quickly and easily apply common styles to your HTML elements.
+- These classes can be used alone or in combination with other Bootstrap components to create custom designs.
+- Utilities are designed to be lightweight and fast, so they don't add unnecessary bloat to your CSS file.
+  -There are a variety of utility classes available in Bootstrap, including classes for typography, spacing, borders, and more.
+
+Here are some examples of Bootstrap utility classes:
+
+.text-center: Centers text horizontally within its parent element.
+.text-muted: Applies a light gray color to text to indicate that it is not important.
+.bg-primary: Applies the primary color as the background color to an element.
+.mt-3: Adds a top margin of 3 units (which can be pixels, ems, or rems) to an element.
+.border: Applies a border to an element.
+.rounded: Adds a rounded border to an element.
+.d-flex: Makes an element a flex container.
+.justify-content-center: Centers the flex items horizontally within a flex container.
+
+```html
+<div
+  class="text-center bg-primary mt-3 border rounded d-flex justify-content-center"
+>
+  <p class="text-muted">
+    This is a centered, gray text block with a blue background, a border, and
+    rounded corners. It's also a flex container with centered content.
+  </p>
+</div>
+```
+
+In the above example, we're using a combination of utility classes to create a
+custom design for a div element. We're centering the text horizontally with
+.text-center, applying the primary color as the background color with
+.bg-primary, adding a top margin of 3 units with .mt-3, applying a border and
+rounded corners with .border and .rounded, making the element a flex container
+with .d-flex, and centering the content within the flex container with
+.justify-content-center.
+
 # Code examples
 
 ```html
