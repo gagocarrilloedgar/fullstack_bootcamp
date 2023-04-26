@@ -144,6 +144,37 @@ example: [bootstrap](./1-bootstrap.html)
 </div>
 ```
 
+### Overriding & customizing
+
+Let's say you want to create a button that has a custom background color, border, and font size. You can do this by creating your own CSS rule that overrides the default Bootstrap button styles.
+
+Here's the HTML code for a basic Bootstrap button:
+
+```html
+<button class="btn btn-primary">Click me</button>
+```
+
+And here's the CSS code to customize the button:
+
+```css
+.btn-custom {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1.5rem;
+}
+
+.btn-custom:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+```
+
+Now the button will have the custom styles we defined in our CSS code.
+
+Note that it's important to include the original .btn class along with our custom class, as this will ensure that the button still has the basic Bootstrap button styles (such as padding and rounded corners).
+
+You can also add additional properties to the .btn-custom class to further customize the button. For example, you could add a text shadow, change the font family, or add a box shadow to create a more complex button design.
+
 # Best Practices
 
 - Use the latest stable version of Bootstrap for your project.

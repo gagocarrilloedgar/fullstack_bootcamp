@@ -1,5 +1,5 @@
 body {
-  font-family: Roboto !important;
+  font-family: Roboto, sans-serif;
 }
 
 .cover-image {
@@ -8,7 +8,14 @@ body {
   height: 350px;
 }
 
-.custom-color {
-  color: rgb(123, 121, 210);
-  background-color: rosybrown;
+.btn-custom {
+  background-color: #a600ff;
+  border-color: #007bff;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.btn-custom:hover {
+  background-color: #0069d9;
+  border-color: #9d663f;
 }
