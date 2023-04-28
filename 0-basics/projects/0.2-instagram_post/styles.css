@@ -1,0 +1,58 @@
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+}
+
+.fa-brands {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+i {
+  text-align: center;
+  padding: 0 5px;
+}
+
+.post {
+  width: 600px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+}
+
+.post-header {
+  display: flex;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-title {
+  display: flex;
+  gap: 15px;
+}
+
+.post-img {
+  background-image: url(./assets/things-to-do-hobbiton-tours-1.jpg);
+  background-position: bottom;
+  background-size: contain;
+  min-height: 500px;
+}
+
+.insta-name {
+  font-weight: lighter;
+}
+
+.post-body {
+  padding: 2% 5%;
+}
+
+.post-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-btn {
+  display: flex;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2fc8e75836.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form class="needs-validation">
+            <div class="card">
+                <div class="card-header ">
+                    <h3 class="my-2">Payment Form Example</h3>
+                </div>
+
+                <div class="card-body">
+
+                    <!-- Alert Row! Showing only if form is not sent correctly -->
+                    <div class="row" id="alertMessage" style="display: none;">
+                        <div class="col">
+                            <div class="alert alert-danger py-2" role="alert">
+                                Some fields are missing!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alert Row! Showing only if form is not sent correctly -->
+                    <div class="row" id="successMessage" style="display: none;">
+                        <div class="col">
+                            <div class="alert alert-success py-2" role="alert">
+                                Good to go!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1st row with card number, cvc and amount -->
+                    <div class="row mb-3">
+                        <div class="col-5">
+                            <label for="cardNumber" class="form-label">Card #</label>
+                            <input type="text" minlength="16" maxlength="16" class="form-control" id="cardNumber"
+                                placeholder="XXXX XXXX XXXX XXXX" aria-describedby="cardNumber" aria-required="true"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label for="cvc" class="form-label">CVC #</label>
+                            <input type="number" minlength="4" maxlength="4" class="form-control" id="cvc"
+                                placeholder="0000" aria-describedby="cvc" aria-required="true" required>
+                        </div>
+                        <div class="col">
+                            <label for="amount" class="form-label ps-3">Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent border-0 p-0 pe-1"
+                                    id="inputGroupPrepend2">€</span>
+                                <input type="number" class="form-control" id="amount" placeholder="Amount"
+                                    aria-describedby="amount" aria-required="true" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2nd row with first name and last name  -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" maxlength="25" class="form-control" id="firstName"
+                                aria-describedby="firstName" aria-required="true" required>
+                        </div>
+                        <div class="col">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" maxlength="25" class="form-control" id="lastName"
+                                aria-describedby="lastName" aria-required="false" required>
+                        </div>
+                    </div>
+
+                    <!-- 3rd row with City, State and Postal Code  -->
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" maxlength="25" class="form-control" id="city" aria-describedby="city"
+                                aria-required="false">
+                        </div>
+                        <div class="col">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-control" name="state" id="state" aria-placeholder="Pick a state"
+                                aria-required="true" required>
+                                <option selected disabled value="">Pick a State</option>
+                                <option>Lisbon</option>
+                                <option>Porto</option>
+                                <option>Madrid</option>
+                                <option>Barcelona</option>
+                                <option>Another</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="postalCode" class="form-label">Postal Code</label>
+                            <input type="text" maxlength="25" class="form-control" id="postalCode"
+                                aria-describedby="postalCode" aria-required="false">
+                        </div>
+                    </div>
+
+                    <!-- 4th row with payment type and comments -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="paymentOptions" class="form-label d-block">We accept:</label>
+                            <div id="paymentOptions"
+                                class="bg-secondary d-inline-flex gap-4 align-items-center rounded-2 mt-3 p-2 px-3">
+                                <div>
+                                    <input type="radio" name="payment" id="mastercard">
+                                    <label for="mastercard" class="form-label text-white m-0"><i
+                                            class="fa-brands fa-cc-mastercard fa-xl"></i></label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="payment" id="visa">
+                                    <label for="visa" class="form-label text-white m-0"><i
+                                            class="fa-brands fa-cc-visa fa-xl"></i></label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="payment" id="payPal">
+                                    <label for="payPal" class="form-label text-white m-0"><i
+                                            class="fa-brands fa-cc-paypal fa-xl"></i></label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="payment" id="americanExp">
+                                    <label for="americanExp" class="form-label text-white m-0"><i
+                                            class="fa-brands fa-cc-amex fa-xl"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="3"></textarea>
+                            <small id="helpMessage" class="form-text text-muted">Add any notes here.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer d-flex justify-content-end gap-2">
+                    <button type="submit" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
