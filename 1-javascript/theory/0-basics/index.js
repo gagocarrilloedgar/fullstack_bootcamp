@@ -23,7 +23,7 @@ const EmptyObject = {}
 const a = 5 // age of a person
 const b = 6 // milesPerHour of a person
 
-const age = 5
+const savings = 5
 const milesPerHour = 6
 
 const MONDAY = 'Monday'
@@ -70,7 +70,7 @@ console.log('hello'.indexOf('e'))
 
 // --- Functions ---
 
-function add(a, b) {
+function add (a, b) {
   return a + b
 }
 
@@ -87,7 +87,7 @@ const newNiceObject2 = {
   age: 25
 }
 
-function consoleLogObject(carName, carYear) {
+function consoleLogObject (carName, carYear) {
   const newCarYear = 2 * carYear
   console.log(`${carName} ${newCarYear}`)
 }
@@ -95,7 +95,7 @@ function consoleLogObject(carName, carYear) {
 consoleLogObject('Ford', 2015)
 consoleLogObject('Ford', '2016')
 
-function nestedFunction(computeSum, a, b) {
+function nestedFunction (computeSum, a, b) {
   const sum = computeSum(a, b)
   console.log('The result is : ' + sum)
   return false
@@ -170,7 +170,7 @@ const anotherWord = 'job'
 
 const condition = ternaryValue === ternaryValue ? '5' : '6'
 
-function withTernary(value) {
+function withTernary (value) {
   return value === 'work' ? '5' : '6'
 }
 
