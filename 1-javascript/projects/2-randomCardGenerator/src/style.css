@@ -1,0 +1,43 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+#random-card {
+  position: relative;
+  width: 290px;
+  height: 456px;
+  border-radius: 3%;
+}
+
+.topleft {
+  position: absolute;
+  top: 2%;
+  left: 6%;
+  font-size: 5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.bottomright {
+  position: absolute;
+  bottom: 4%;
+  right: 6%;
+  font-size: 5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.centralnumber {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.red-suit {
+  color: red;
+}
+.black-suit {
+  color: black;
+}
