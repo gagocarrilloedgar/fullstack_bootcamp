@@ -3,47 +3,61 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = function() {
-  // Generate a new card
-  const newCard = generateRandomCard();
-
   // Defining the DOM elements with JS
-  const cardDOM = document.getElementById("random-card");
+  const randomCard = document.getElementById("random-card");
   const symbolsDOM = document.getElementsByClassName("symbol");
   const cardNumberDOM = document.querySelector(".centralnumber");
+  const newButtonCard = document.getElementById("btn-new-card");
+  const heightInput = document.getElementById("height");
+  const widthInput = document.getElementById("width");
 
-  // Applying the color to the DOM
-  if (newCard.suit == "♦" || newCard.suit == "♥")
-    cardDOM.classList.add("red-suit");
-  else cardDOM.classList.add("black-suit");
-  // Applying the Card Number to the DOM
-  cardNumberDOM.innerHTML = newCard.cardNumber;
-  // Applying the Card Suit to the DOM
-  for (const symbol of symbolsDOM) {
-    symbol.innerHTML = newCard.suit.toString();
-  }
+  applyCardToDom(randomCard, symbolsDOM, cardNumberDOM);
+
+  heightInput.addEventListener("change", e => {
+    setHeight(e.target.value, randomCard);
+  });
+
+  widthInput.addEventListener("change", e => {
+    setWidth(e.target.value, randomCard);
+  });
+
+  // Generate a new card  5s to 5s
+  let intervalCardGenerator = setInterval(
+    () => applyCardToDom(randomCard, symbolsDOM, cardNumberDOM),
+    2000
+  );
+
+  newButtonCard.addEventListener("click", () => {
+    intervalCardGenerator = setNewIntervalOnClick(
+      intervalCardGenerator,
+      randomCard,
+      symbolsDOM,
+      cardNumberDOM
+    );
+  });
 };
 
-document.getElementById("random-card").onclick = applyCardToDom;
-document.getElementById("btn-new-card").onclick = applyCardToDom;
-
-// Generate a new card from 5s to 5s
-let intervalCardGenerator = setInterval(applyCardToDom, 2000);
-const setNewIntervalOnClick = () => {
-  clearInterval(intervalCardGenerator);
-  intervalCardGenerator = setInterval(applyCardToDom, 2000);
+const setNewIntervalOnClick = (
+  intervalCardGenerator,
+  randomCard,
+  symbolsDOM,
+  cardNumberDOM
+) => {
+  clearInterval(intervalCardGenerator); // Clear previous interval
+  const newIntervalCardGenerator = setInterval(
+    () => applyCardToDom(randomCard, symbolsDOM, cardNumberDOM),
+    2000
+  );
+  applyCardToDom(randomCard, symbolsDOM, cardNumberDOM);
+  return newIntervalCardGenerator;
 };
-document
-  .getElementById("btn-new-card")
-  .addEventListener("click", setNewIntervalOnClick);
 
-//
-document.getElementById("height").onchange = function(e) {
-  let cardDOM = document.getElementById("random-card");
-  cardDOM.style.height = e.target.value + "px";
+const setHeight = (height, card) => {
+  card.style.height = height + "px";
 };
-document.getElementById("width").onchange = function(e) {
-  let cardDOM = document.getElementById("random-card");
-  cardDOM.style.width = e.target.value + "px";
+
+const setWidth = (width, card) => {
+  card.style.width = width + "px";
 };
 
 function generateRandomCard() {
@@ -75,19 +89,14 @@ function generateRandomCard() {
   };
 }
 
-function applyCardToDom() {
+function applyCardToDom(randomCard, symbolsDOM, cardNumberDOM) {
   // Generate a new card
   const newCard = generateRandomCard();
 
-  // Defining the DOM elements with JS
-  const cardDOM = document.getElementById("random-card");
-  const symbolsDOM = document.getElementsByClassName("symbol");
-  const cardNumberDOM = document.querySelector(".centralnumber");
-
   // Applying the color to the DOM
   if (newCard.suit == "♦" || newCard.suit == "♥")
-    cardDOM.classList.replace("black-suit", "red-suit");
-  else cardDOM.classList.replace("red-suit", "black-suit");
+    randomCard.classList.replace("black-suit", "red-suit");
+  else randomCard.classList.replace("red-suit", "black-suit");
 
   // Applying the Card Number to the DOM
   cardNumberDOM.innerHTML = newCard.cardNumber;
